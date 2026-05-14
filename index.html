@@ -533,9 +533,8 @@
   <script>
     const ASSETS = { items: ["images/item1.png", "images/item2.png", "images/item3.png", "images/item4.png", "images/item5.png"] };
 
-    const PRAISES = ["Здорово!", "Отлично!", "Так держать!", "Классно!", "Молодец!", "Умница!", "Супер!"];
+    const ESCAPES = ["Бульк!", "Сорвалась!", "Улизнула!", "Эх, ушла!", "Мимо!"];
 
-    // ТРИ НАБОРА ЗАДАНИЙ С ВАШИМИ ИСПРАВЛЕНИЯМИ
     const TASK_SETS = [
       [
         { type: "radio", prompt: "В каком слове все согласные звуки МЯГКИЕ:", options: ["малина", "порог", "небо", "пень"], answer: "пень" },
@@ -549,7 +548,7 @@
         { type: "radio", prompt: "В каком словосочетании есть прилагательное в винительном падеже?", options: ["не хватает красного цвета", "думаю о хорошем дне", "купил черный компьютер"], answer: "купил черный компьютер" },
         { type: "multi-select", prompt: "Определи род прилагательных:", items: [{ word: "старое", options: ["м.р.", "ж.р.", "ср.р."], answer: "ср.р." }, { word: "ветхий", options: ["м.р.", "ж.р.", "ср.р."], answer: "м.р." }, { word: "старинная", options: ["м.р.", "ж.р.", "ср.р."], answer: "ж.р." }] },
         { type: "radio", prompt: "Какое слово не является местоимением?", options: ["мне", "под", "тебе"], answer: "под" },
-        { type: "radio", prompt: "В каком слове НЕ с глаголом пишется слитно?", options: ["(не)годовать", "(не)любить", "(не)чувствуешь"], answer: "(не)годовать" },
+        { type: "radio", prompt: "В каком слове НЕ со словом пишется раздельно?", options: ["(не)забудка", "(не)любить", "(не)рвы"], answer: "(не)любить" },
         { type: "radio", prompt: "Какой глагол относится к 1 спряжению?", options: ["подводить", "проспать", "завести"], answer: "завести" },
         { type: "radio", prompt: "В каком ряду в обоих словах пишется Ь?", options: ["погнат..ся, скажеш..", "старает..ся, улыбает..ся", "шепчеш.., катает..ся"], answer: "погнат..ся, скажеш.." },
         { type: "checkbox", prompt: "Укажи словосочетания:", options: ["открытка от брата", "для праздника", "идёт дождь", "ездить на машине", "перед каникулами"], answer: ["открытка от брата", "ездить на машине"] },
@@ -563,18 +562,18 @@
         { type: "radio", prompt: "В каком ряду в корне пропущена безударная проверяемая гласная?", options: ["с..ва, м..лчать", "м..роз, п...играли", "к..рова, к..ртофель"], answer: "с..ва, м..лчать" },
         { type: "radio", prompt: "В каком слове есть непроизносимая согласная?", options: ["чес..ный", "чудес..ный", "прекрас..ный"], answer: "чес..ный" },
         { type: "radio", prompt: "В каком слове на конце пишется Ь?", options: ["доч..", "кирпич..", "грач.."], answer: "доч.." },
-        { type: "radio", prompt: "Где во всех словах пишется разделительный твёрдый знак (Ъ)?", options: ["под..езд, об..яснение", "в..юга, семь..я", "плать..е, стуль..я"], answer: ["под..езд, об..яснение"] },
+        { type: "radio", prompt: "Где во всех словах пишется разделительный твёрдый знак (Ъ)?", options: ["под..езд, об..яснение", "в..юга, семь..я", "плать..е, стуль..я"], answer: "под..езд, об..яснение" },
         { type: "radio", prompt: "В каком словосочетании есть предлог?", options: ["сидел (на)стуле", "(по)смотрел фильм", "(у)бежал быстро"], answer: "сидел (на)стуле" },
         { type: "radio", prompt: "В каком словосочетании существительное 2-го склонения?", options: ["плыл по морю", "пришёл к дедушке", "спрятался в тени"], answer: "плыл по морю" },
         { type: "radio", prompt: "Где существительное стоит в дательном падеже?", options: ["плыть по реке", "мечтать о собаке", "стоять на горе"], answer: "плыть по реке" },
         { type: "multi-select", prompt: "Определи род прилагательных:", items: [{ word: "зимнее", options: ["м.р.", "ж.р.", "ср.р."], answer: "ср.р." }, { word: "яркий", options: ["м.р.", "ж.р.", "ср.р."], answer: "м.р." }, { word: "светлая", options: ["м.р.", "ж.р.", "ср.р."], answer: "ж.р." }] },
         { type: "radio", prompt: "Укажи личное местоимение:", options: ["он", "под", "над"], answer: "он" },
-        { type: "radio", prompt: "В каком слове НЕ с глаголом пишется раздельно?", options: ["(не)хочет", "(не)взлюбить", "(не)доумевать"], answer: "(не)хочет" },
+        { type: "radio", prompt: "Какой глагол относится к I спряжению?", options: ["хочет", "говорит", "молчим"], answer: "хочет" },
         { type: "radio", prompt: "Какой глагол относится ко 2 спряжению?", options: ["строить", "читать", "греть"], answer: "строить" },
         { type: "radio", prompt: "В каком ряду в обоих словах пишется Ь?", options: ["купат..ся, видиш..", "смеет..ся, учит..ся", "пишет..ся, берет..ся"], answer: "купат..ся, видиш.." },
         { type: "checkbox", prompt: "Укажи словосочетания:", options: ["высокая гора", "около леса", "светит солнце", "гулять в парке", "к бабушке"], answer: ["высокая гора", "гулять в парке"] },
         { type: "checkbox", prompt: "Выбери цифры, на месте которых должны стоять запятые:<br><br>Пчела <b>(1)</b> вылетела <b>(2)</b> из улья <b>(3)</b> присела <b>(4)</b> на цветок <b>(5)</b> и <b>(6)</b> стала <b>(7)</b> собирать <b>(8)</b> нектар.", options: ["1", "2", "3", "4", "5", "6", "7", "8"], answer: ["3"] },
-        { type: "radio", prompt: "Укажи нераспространенное предложение:", options: ["Ветер стих.", "Петя и Юра читают.", "Мы идем домой.", "Поют соловьи и скворцы."], answer: "Ветер стих." },
+        { type: "radio", prompt: "Укажи нераспространенное предложение:", options: ["Ветер стих.", "Петя и Юра читают книгу.", "Мы идем домой.", "В лесу поют скворцы."], answer: "Ветер стих." },
         { type: "radio", prompt: "Какое предложение является вопросительным?", options: ["Где ты живешь?", "Хорошо в лесу.", "Пойдем гулять."], answer: "Где ты живешь?" }
       ],
       [
@@ -589,7 +588,7 @@
         { type: "radio", prompt: "В каком словосочетании существительное стоит в винительном падеже?", options: ["положил на стол", "растёт около дома", "гулял по парку"], answer: "положил на стол" },
         { type: "multi-select", prompt: "Определи род прилагательных:", items: [{ word: "могучее", options: ["м.р.", "ж.р.", "ср.р."], answer: "ср.р." }, { word: "ранний", options: ["м.р.", "ж.р.", "ср.р."], answer: "м.р." }, { word: "весенняя", options: ["м.р.", "ж.р.", "ср.р."], answer: "ж.р." }] },
         { type: "radio", prompt: "Какое из этих слов является личным местоимением?", options: ["тебя", "около", "если"], answer: "тебя" },
-        { type: "radio", prompt: "В каком случае НЕ с глаголом пишется раздельно?", options: ["(не)выучил", "(не)здоровится", "(не)волить"], answer: "(не)выучил" },
+        { type: "radio", prompt: "В каком случае НЕ со словом пишется раздельно?", options: ["(не)выучил", "(не)бесный", "(не)льзя"], answer: "(не)выучил" },
         { type: "radio", prompt: "Какой глагол относится к I спряжению?", options: ["стелить", "держать", "клеить"], answer: "стелить" },
         { type: "radio", prompt: "В каком ряду в обоих словах пишется Ь?", options: ["надо торопит..ся, ты улыбаеш..ся", "он надеет..ся, мал..чик", "птица спускает..ся, мыш.."], answer: "надо торопит..ся, ты улыбаеш..ся" },
         { type: "checkbox", prompt: "Укажи словосочетания (выбери все верные варианты):", options: ["петь громко", "весенний лес", "пришла весна", "около дома", "деревянный стол"], answer: ["петь громко", "весенний лес", "деревянный стол"] },
@@ -638,6 +637,15 @@
     function isOp(t){ return t === opToken; }
     function lockTo(newState){ state = newState; }
 
+    // ФУНКЦИЯ ДЛЯ ПЕРЕМЕШИВАНИЯ МАССИВОВ
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
     function setHearts(){
       heartsWrap.innerHTML = "";
       for(let i=0;i<maxMistakes;i++){
@@ -672,18 +680,29 @@
       questionText.innerHTML = task.prompt;
       answerWrap.innerHTML = "";
 
+      // Умная проверка: если все варианты состоят только из цифр, мы их НЕ перемешиваем
+      const isOnlyNumbers = task.options ? task.options.every(opt => /^\d+$/.test(opt.trim())) : false;
+
       if (task.type === "radio") {
-        task.options.forEach((opt, idx) => {
+        let optionsToShow = [...task.options];
+        if (!isOnlyNumbers) shuffleArray(optionsToShow);
+        
+        optionsToShow.forEach((opt) => {
           const lbl = document.createElement("label");
           lbl.className = "radio-label";
-          lbl.innerHTML = `<input type="radio" name="taskRadio" value="${idx}"> <span>${opt}</span>`;
+          const origIdx = task.options.indexOf(opt);
+          lbl.innerHTML = `<input type="radio" name="taskRadio" value="${origIdx}"> <span>${opt}</span>`;
           answerWrap.appendChild(lbl);
         });
       } else if (task.type === "checkbox") {
-        task.options.forEach((opt, idx) => {
+        let optionsToShow = [...task.options];
+        if (!isOnlyNumbers) shuffleArray(optionsToShow);
+
+        optionsToShow.forEach((opt) => {
           const lbl = document.createElement("label");
           lbl.className = "check-label";
-          lbl.innerHTML = `<input type="checkbox" name="taskCheck" value="${idx}"> <span>${opt}</span>`;
+          const origIdx = task.options.indexOf(opt);
+          lbl.innerHTML = `<input type="checkbox" name="taskCheck" value="${origIdx}"> <span>${opt}</span>`;
           answerWrap.appendChild(lbl);
         });
       } else if (task.type === "multi-select") {
@@ -691,7 +710,11 @@
           const row = document.createElement("div");
           row.className = "select-row";
           let selHtml = `<select id="sel_${idx}"><option value="">Выбери...</option>`;
-          item.options.forEach(opt => selHtml += `<option value="${opt}">${opt}</option>`);
+          
+          let optionsToShow = [...item.options];
+          shuffleArray(optionsToShow); 
+          
+          optionsToShow.forEach(opt => selHtml += `<option value="${opt}">${opt}</option>`);
           selHtml += `</select>`;
           row.innerHTML = `<span>${item.word}</span> ${selHtml}`;
           answerWrap.appendChild(row);
@@ -829,10 +852,12 @@
     function captureItem(obj){
       if(!started || state !== State.IDLE) return;
       lockTo(State.CATCHING); obj.captured = true; capturedObj = obj; capturedEl = obj.el;
-      obj.payloadKind = Math.random() < 0.2 ? "praise" : "task";
       
-      const randomPraise = PRAISES[Math.floor(Math.random() * PRAISES.length)];
-      obj.payload = obj.payloadKind === "praise" ? { text: randomPraise } : { task: takeTask() };
+      // Замена на escape
+      obj.payloadKind = Math.random() < 0.2 ? "escape" : "task";
+      
+      const randomEscape = ESCAPES[Math.floor(Math.random() * ESCAPES.length)];
+      obj.payload = obj.payloadKind === "escape" ? { text: randomEscape } : { task: takeTask() };
       
       wandEl.classList.add("wiggle"); setTimeout(()=>wandEl.classList.remove("wiggle"), 450);
       castP1 = getWandTip();
@@ -855,7 +880,7 @@
             requestAnimationFrame(step); 
         } else { 
             clearLine(); 
-            if(obj.payloadKind === "praise"){ 
+            if(obj.payloadKind === "escape"){ // Проверка на escape
                 showToast(obj.payload.text); 
                 setTimeout(()=>collectSpecial(), 600); 
             } else { 
@@ -887,10 +912,12 @@
       }
 
       if(ok){
-        const randomPraise = PRAISES[Math.floor(Math.random() * PRAISES.length)];
-        feedback.textContent = "Верно!"; feedback.className = "feedback good"; showToast(randomPraise);
+        feedback.textContent = "Верно!"; feedback.className = "feedback good"; 
         setTimeout(async () => { closeModalNow(); lockTo(State.FLYING); await flyToSlot(capturedEl, answeredCorrect); capturedEl.remove(); clearCaptured(); answeredCorrect++; score += 10; setScore(); setSlots(); if(answeredCorrect >= TOTAL_QUESTIONS) win.classList.add("on"); else { lockTo(State.IDLE); createDeepItems(); } }, 600);
       } else {
+        const randomEscape = ESCAPES[Math.floor(Math.random() * ESCAPES.length)];
+        showToast(randomEscape);
+
         feedback.textContent = "Ошибка!"; feedback.className = "feedback bad"; mistakes++; setHearts();
         if(mistakes >= maxMistakes) { closeModalNow(); gameover.classList.add("on"); } 
         else setTimeout(()=> { closeModalNow(); capturedEl.remove(); clearCaptured(); createDeepItems(); lockTo(State.IDLE); }, 1000);
